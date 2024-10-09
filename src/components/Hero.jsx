@@ -25,7 +25,7 @@ window.Buffer = Buffer;
 
 
 let Responsee = {
-  
+
 };
 
 function cleanAnimeName(animeName) {
@@ -45,7 +45,7 @@ const Hero = () => {
   const { PublicKeyID } = useContext(VideoContext);
   const { PUBLICKEY } = useContext(VideoContext);
   const { SetSignature } = useContext(VideoContext);
-  
+
   const TestImageHandler = () => {
     navigate("/testimages");
   }
@@ -55,14 +55,14 @@ const Hero = () => {
       alert('Phantom Wallet is not installed. Please install Phantom Wallet to use this feature.');
       return;
     }
-  
+
     // Connect to the Phantom Wallet if not already connected
     if (!user) {
       const response = await window.solana.connect();
       const userPublicKey = new PublicKey(response.publicKey.toString());
       setUser({ publicKey: userPublicKey });
     }
-  
+
     // Create a Solana transaction
     const connection = new Connection('https://api.devnet.solana.com');
     const transaction = new Transaction().add(
@@ -74,9 +74,9 @@ const Hero = () => {
     );
     transaction.feePayer = PUBLICKEY;
     // Fetch recent blockhash
-    const { blockhash } = await connection.getRecentBlockhash();
+    const { blockhash } = await connection.getLatestBlockhash();
     transaction.recentBlockhash = blockhash;
-  
+
     // Sign and send the transaction
     setTransactionStatus("Processing transaction...");
 
@@ -95,16 +95,16 @@ const Hero = () => {
     const file = event.target.files[0];
     const formData = new FormData();
     formData.append('image', file);
-  
+
     const response = await fetch('https://api.trace.moe/search', {
       method: 'POST',
       body: formData,
     });
-    
+
     const data = await response.json();
     Responsee = data;
     toast.success('Upload Successful!');
-    
+
     // console.log(data);
     let videoUrl = Responsee.result[0].video;
     let AnimeName0 = Responsee.result[0].filename;
@@ -119,16 +119,16 @@ const Hero = () => {
     setAniList(AniList0);
     navigate("/services");
 
-  
+
     // let container = document.getElementById('videoplayer');
     // let video = document.createElement('video');
     // video.src = videoUrl;
-    
+
     // video.loop = true;
     // container.appendChild(video);
     // video.play();
-  
-  
+
+
   };
   return (
     <Section
@@ -137,21 +137,21 @@ const Hero = () => {
       crossesOffset="lg:translate-y-[5.25rem]"
       customPaddings
       id="hero"
-      >
+    >
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
             Upload a Snap &nbsp;and&nbsp;Find the Anime using{`  `}
             <span className="inline-block relative">
-               AnimeLens{" "}
-               <img
+              AnimeLens{" "}
+              <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
                 width={624}
                 height={28}
                 alt="Curve"
               />
-                    
+
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
@@ -164,18 +164,18 @@ const Hero = () => {
           <Button href="https://www.patreon.com/user/membership?u=100692168" white >
             Gimme money i am broke!!
           </Button>
-          
+
           <br />
           <br />
           {/* <Button href="/search" white >
             Search Anime
           </Button> */}
           <Button >
-            
-          <label htmlFor="fileInput" className="inline-flex items-center justify-center px-4 py-2  text-white rounded-md cursor-pointer hover:bg-blue-700">
+
+            <label htmlFor="fileInput" className="inline-flex items-center justify-center px-4 py-2  text-white rounded-md cursor-pointer hover:bg-blue-700">
               <span>Upload Image</span>
-              <input id="fileInput" type="file" className="hidden" accept=".png, .jpg, .jpeg" onChange={handleFileChange}/>
-          </label>
+              <input id="fileInput" type="file" className="hidden" accept=".png, .jpg, .jpeg" onChange={handleFileChange} />
+            </label>
           </Button>
           {transactionStatus && (
             <div className="mt-4 text-blue-500">
@@ -186,20 +186,20 @@ const Hero = () => {
           </br>
           <br>
           </br>
-          <br/>
+          <br />
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             Dont know what is anime or dont have a snap , click on the button below to see the demo images ( get yourself one next time )
           </p>
 
           <Button >
-            
-          <label className="inline-flex items-center justify-center px-4 py-2  text-white rounded-md cursor-pointer hover:bg-blue-700">
-              <span>Test Images</span>
-              <input type="button" className="hidden" onClick={TestImageHandler}/>
 
-          </label>
+            <label className="inline-flex items-center justify-center px-4 py-2  text-white rounded-md cursor-pointer hover:bg-blue-700">
+              <span>Test Images</span>
+              <input type="button" className="hidden" onClick={TestImageHandler} />
+
+            </label>
           </Button>
-           
+
 
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
@@ -207,7 +207,7 @@ const Hero = () => {
             <div className="relative bg-n-8 rounded-[1rem]">
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
-              <div id ="videoplayer" className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+              <div id="videoplayer" className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 <img
                   src={robot}
                   className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
