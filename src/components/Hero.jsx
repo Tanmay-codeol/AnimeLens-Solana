@@ -158,11 +158,11 @@ const Hero = () => {
             Unleash the power of AnimeLens, Find your Anime with episode number
           </p>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Make Sure You are on Solana Devnet on Phantom!!!
+            For testing Purpose. Please use devnet sol for now, will be replaced by AniLens Coin in future. More details below!
           </p>
           <Toaster />
-          <Button href="https://www.patreon.com/user/membership?u=100692168" white >
-            Gimme money i am broke!!
+          <Button href="" white >
+            Buy The AniLens Coin!!
           </Button>
 
           <br />

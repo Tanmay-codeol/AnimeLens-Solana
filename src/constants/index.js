@@ -5,7 +5,6 @@ import Kard4 from "../assets/benefits/card-4.svg";
 import Kard5 from "../assets/benefits/card-5.svg";
 import Kard6 from "../assets/benefits/card-6.svg";
 
-
 import {
   benefitIcon1,
   benefitIcon2,
@@ -55,9 +54,7 @@ export const navigation = [
     title: "Pricing",
     url: "#pricing",
   },
-  {
-    
-  },
+  {},
   {
     id: "4",
     title: "New account",
@@ -211,22 +208,23 @@ export const pricing = [
     id: "0",
     title: "Basic",
     description: "Pay once and use forever ",
-    price: "4.99",
+    price: "10 ALC",
     features: [
-      "Almost unlimited usage (check out nerd stuff for more info)",
+      "10 searches straight away",
       "Support for me to keep the project alive and running",
       "No additional costs or hidden fees",
     ],
   },
   {
     id: "1",
-    title: "Premium ",
-    description: "Subscription-based model to support me , (same as basic , no extra features)",
-    price: "9.99",
+    title: "Premium",
+    description:
+      "Subscription-based model to support me , (same as basic , no extra features)",
+    price: "500 ALC",
     features: [
       "Almost unlimited usage (check out nerd stuff for more info)",
-      "Help me build in gaming pc",
-      "Your name in future projects as a supporter",
+      "beta access to new features",
+      "Your name in future projects as a supporter (only if you want)",
     ],
   },
   {
@@ -306,13 +304,13 @@ export const socials = [
     id: "1",
     title: "Twitter",
     iconUrl: twitter,
-    url: "https://twitter.com/Tanmay_Codeol",
+    url: "",
   },
   {
     id: "2",
     title: "Instagram",
     iconUrl: instagram,
-    url: "https://github.com/Tanmay-codeol",
+    url: "",
   },
   {
     id: "3",

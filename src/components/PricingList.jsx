@@ -19,7 +19,7 @@ const PricingList = () => {
           <div className="flex items-center h-[5.5rem] mb-6">
             {item.price && (
               <>
-                <div className="h3">$</div>
+                <div className="h3"></div>
                 <div className="text-[5.5rem] leading-none font-bold">
                   {item.price}
                 </div>
@@ -29,12 +29,12 @@ const PricingList = () => {
 
           <Button
             className="w-full mb-6"
-            href="https://www.patreon.com/user/membership?u=100692168"
+            href=""
             target="_blank"
             white={!!item.price}
             rel="noopener noreferrer"
           >
-            {item.price ? "Get started" : "Patreon "}
+            {item.price ? "Buy with ALC" : "Donate SOL "}
           </Button>
 
           <ul>

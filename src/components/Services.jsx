@@ -102,7 +102,7 @@ const Services = () => {
 
           <Heading
           title="Like the result?? Share it with your friends!!"
-          text="You can also donate me at tanmaysharma0852@okaxis (upi) , or patreon if you want to support me at https://www.patreon.com/user/membership?u=100692168 , and yes my SOL ADDRESS 36FDscnHt8btkHiotES5VV9PYkfmwVVr2xngkScwCCE7"
+          text="SPEND THAT MONEY ON ANILENS COIN, ITS AN ORDER FROM THE DEVELOPER!!!"
         />
         <Heading
         title = "Unable to locate the desired content? "
