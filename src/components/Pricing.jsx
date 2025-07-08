@@ -31,7 +31,7 @@ const Pricing = () => {
 
         <Heading
           tag="Get started with AnimeLens"
-          title="Help me build a Gaming PC !!!"
+          title="Buy The AniLens Coin, It is going to be an official currency for this website!!!, Spending this coin will be available by last months of 2026, till then enjoy with free devnet sol!!"
         />
 
         <div className="relative">
